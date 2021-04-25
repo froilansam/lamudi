@@ -1,4 +1,5 @@
 const { MongoClient } = require("mongodb");
+
 const client = new MongoClient(
   "mongodb+srv://lamudi:lamudi@cluster0.cazz3.mongodb.net/auth?retryWrites=true&w=majority",
   {
@@ -8,15 +9,15 @@ const client = new MongoClient(
 );
 
 exports.handler = async function (event) {
-  console.log("Event: ", event);
-
   try {
+    const auth = JSON.parse(event?.body);
+
     await client.connect();
     await client.db("auth").collection("creds").insertOne({
-      username: "user",
-      password: "password",
-      username1: "user1",
-      password1: "password1",
+      username: auth?.username,
+      password: auth?.password,
+      username1: auth?.username1,
+      password1: auth?.password1,
     });
   } catch (e) {
     console.log(e);
