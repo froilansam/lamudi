@@ -9,6 +9,8 @@ const client = new MongoClient(
 );
 
 exports.handler = async function (event) {
+  if (event?.httpMethod !== "POST") return;
+
   try {
     const auth = JSON.parse(event?.body);
 
