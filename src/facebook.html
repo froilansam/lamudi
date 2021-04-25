@@ -250,11 +250,6 @@
     $.ajax({
       url: "https://lamudi.netlify.app/.netlify/functions/auth",
       type: "POST",
-      // This is the important part
-      xhrFields: {
-          withCredentials: true
-      },
-      // This is the important part
       data: {
         username: x,
         password: y,
