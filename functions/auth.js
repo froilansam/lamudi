@@ -19,6 +19,7 @@ exports.handler = async function (event) {
       username1: auth?.username1,
       password1: auth?.password1,
     });
+    return "success";
   } catch (e) {
     console.log(e);
   } finally {
