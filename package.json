@@ -1,0 +1,23 @@
+{
+  "name": "lamudi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:lambda": "netlify-lambda serve functions",
+    "build:lambda": "netlify-lambda build functions",
+    "prod": "yarn build:lambda"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv-webpack": "^7.0.2",
+    "moment": "^2.29.1",
+    "mongodb": "^3.6.6",
+    "mongodb-client-encryption": "^1.2.3",
+    "netlify-lambda": "^2.0.3"
+  }
+}
